@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { categories, categoryInfo } from "@/data/treatments";
+import { categories, categoryInfo, type Treatment } from "@/data/treatments";
 
 export const Route = createFileRoute("/treatments/$slug")({
   head: ({ params }) => {
@@ -93,7 +93,7 @@ function TreatmentPage() {
             <h2 className="font-display text-4xl text-primary">Price List</h2>
           </div>
           <div className="bg-card border border-border/60 rounded-sm overflow-hidden shadow-soft">
-            {category.treatments.map((t, i) => (
+            {category.treatments.map((t: Treatment, i: number) => (
               <div
                 key={t.name}
                 className={`flex items-baseline justify-between gap-6 px-8 py-5 ${i !== 0 ? "border-t border-border/60" : ""}`}
