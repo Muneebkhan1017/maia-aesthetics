@@ -4,12 +4,13 @@ import { Phone, MapPin, Clock, Instagram, Calendar, ChevronDown, Menu, X, Sparkl
 import logo from "@/assets/logo.png";
 import { categories } from "@/data/treatments";
 
-const nav = [
+type NavItem = { to: "/" | "/treatments" | "/about" | "/contact"; label: string; hasMega?: boolean };
+const nav: NavItem[] = [
   { to: "/", label: "Home" },
   { to: "/treatments", label: "Treatments", hasMega: true },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);
