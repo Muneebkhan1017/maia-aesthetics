@@ -67,13 +67,13 @@ export function Header() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="tel:+447000000000"
-              className="lg:hidden flex items-center gap-2 px-3 py-2 text-[11px] tracking-[0.2em] uppercase text-primary border border-primary/30 rounded-sm hover:bg-primary/5"
+              className="lg:hidden flex items-center gap-2 px-3 py-2 text-xs font-semibold tracking-[0.18em] uppercase text-primary border border-primary/30 rounded-sm hover:bg-primary/5"
             >
               <Phone className="h-3.5 w-3.5" /> Call
             </a>
             <Link
               to="/contact"
-              className="flex items-center gap-2 px-5 py-2.5 text-[11px] tracking-[0.25em] uppercase bg-gradient-gold text-cream rounded-sm shadow-soft hover:opacity-90 hover:shadow-md transition-all"
+              className="flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-[0.22em] uppercase bg-gradient-gold text-cream rounded-sm shadow-soft hover:opacity-90 hover:shadow-md transition-all"
             >
               <Calendar className="h-3.5 w-3.5" /> Book Consultation
             </Link>
