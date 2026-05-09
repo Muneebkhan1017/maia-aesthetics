@@ -26,36 +26,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* Utility / transactional top bar */}
-      <div className="hidden md:block bg-primary text-cream">
-        <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-2 text-[11px] tracking-[0.2em] uppercase">
-          <div className="flex items-center gap-6 opacity-90">
-            <a href="tel:+447000000000" className="flex items-center gap-2 hover:text-accent transition-colors">
-              <Phone className="h-3 w-3" /> +44 7000 000 000
-            </a>
-            <span className="flex items-center gap-2 opacity-80">
-              <MapPin className="h-3 w-3" /> London Clinic
-            </span>
-            <span className="flex items-center gap-2 opacity-80">
-              <Clock className="h-3 w-3" /> Mon–Sat · 10–19
-            </span>
-          </div>
-          <div className="flex items-center gap-5">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors" aria-label="Instagram">
-              <Instagram className="h-3.5 w-3.5" />
-            </a>
-            <span className="opacity-60">|</span>
-            <a href="https://wa.me/447000000000" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
-              WhatsApp
-            </a>
-            <span className="opacity-60">|</span>
-            <span className="flex items-center gap-2 text-accent">
-              <Sparkles className="h-3 w-3" /> New patient consult — complimentary
-            </span>
-          </div>
-        </div>
-      </div>
-
       {/* Main bar */}
       <div
         className={`backdrop-blur-md border-b transition-all ${
