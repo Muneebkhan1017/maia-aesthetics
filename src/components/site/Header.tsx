@@ -53,7 +53,7 @@ export function Header() {
               >
                 <Link
                   to={n.to}
-                  className="group flex items-center gap-1 text-[11px] tracking-[0.25em] uppercase text-foreground/80 hover:text-accent transition-colors py-2"
+                  className="group flex items-center gap-1 text-sm font-semibold tracking-[0.2em] uppercase text-foreground/85 hover:text-accent transition-colors py-2"
                   activeProps={{ className: "text-accent" }}
                 >
                   {n.label}
