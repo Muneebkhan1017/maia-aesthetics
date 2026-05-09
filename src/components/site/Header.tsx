@@ -39,8 +39,8 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3 group">
             <img src={logo} alt="Maia Aesthetics Clinic" className={`w-auto transition-all ${scrolled ? "h-9" : "h-11"}`} />
             <span className="hidden sm:flex flex-col leading-none">
-              <span className="font-display text-2xl tracking-[0.18em] text-primary">MAIA</span>
-              <span className="text-[9px] tracking-[0.32em] text-muted-foreground mt-1">AESTHETICS &amp; WELLNESS</span>
+              <span className="font-display font-bold text-3xl tracking-[0.2em] text-primary">MAIA</span>
+              <span className="text-[11px] font-semibold tracking-[0.32em] text-muted-foreground mt-1.5">AESTHETICS &amp; WELLNESS</span>
             </span>
           </Link>
 
@@ -53,7 +53,7 @@ export function Header() {
               >
                 <Link
                   to={n.to}
-                  className="group flex items-center gap-1 text-[11px] tracking-[0.25em] uppercase text-foreground/80 hover:text-accent transition-colors py-2"
+                  className="group flex items-center gap-1 text-sm font-semibold tracking-[0.2em] uppercase text-foreground/85 hover:text-accent transition-colors py-2"
                   activeProps={{ className: "text-accent" }}
                 >
                   {n.label}
@@ -67,13 +67,13 @@ export function Header() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="tel:+447000000000"
-              className="lg:hidden flex items-center gap-2 px-3 py-2 text-[11px] tracking-[0.2em] uppercase text-primary border border-primary/30 rounded-sm hover:bg-primary/5"
+              className="lg:hidden flex items-center gap-2 px-3 py-2 text-xs font-semibold tracking-[0.18em] uppercase text-primary border border-primary/30 rounded-sm hover:bg-primary/5"
             >
               <Phone className="h-3.5 w-3.5" /> Call
             </a>
             <Link
               to="/contact"
-              className="flex items-center gap-2 px-5 py-2.5 text-[11px] tracking-[0.25em] uppercase bg-gradient-gold text-cream rounded-sm shadow-soft hover:opacity-90 hover:shadow-md transition-all"
+              className="flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-[0.22em] uppercase bg-gradient-gold text-cream rounded-sm shadow-soft hover:opacity-90 hover:shadow-md transition-all"
             >
               <Calendar className="h-3.5 w-3.5" /> Book Consultation
             </Link>
