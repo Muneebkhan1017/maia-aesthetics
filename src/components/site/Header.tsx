@@ -39,8 +39,8 @@ export function Header() {
           <Link to="/" className="flex items-center gap-3 group">
             <img src={logo} alt="Maia Aesthetics Clinic" className={`w-auto transition-all ${scrolled ? "h-9" : "h-11"}`} />
             <span className="hidden sm:flex flex-col leading-none">
-              <span className="font-display text-2xl tracking-[0.18em] text-primary">MAIA</span>
-              <span className="text-[9px] tracking-[0.32em] text-muted-foreground mt-1">AESTHETICS &amp; WELLNESS</span>
+              <span className="font-display font-bold text-3xl tracking-[0.2em] text-primary">MAIA</span>
+              <span className="text-[11px] font-semibold tracking-[0.32em] text-muted-foreground mt-1.5">AESTHETICS &amp; WELLNESS</span>
             </span>
           </Link>
 
