@@ -139,14 +139,14 @@ export function Header() {
             <div className="mt-5 grid grid-cols-2 gap-3">
               <a
                 href="tel:+447000000000"
-                className="flex items-center justify-center gap-2 px-4 py-3 text-[11px] tracking-[0.2em] uppercase border border-primary/30 text-primary rounded-sm"
+                className="flex items-center justify-center gap-2 px-4 py-3 text-[11px] tracking-[0.2em] uppercase border border-primary/30 text-primary rounded-full"
               >
                 <Phone className="h-3.5 w-3.5" /> Call
               </a>
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-2 px-4 py-3 text-[11px] tracking-[0.2em] uppercase bg-gradient-gold text-cream rounded-sm"
+                className="flex items-center justify-center gap-2 px-4 py-3 text-[11px] tracking-[0.2em] uppercase bg-gradient-gold text-cream rounded-full"
               >
                 <Calendar className="h-3.5 w-3.5" /> Book
               </Link>
