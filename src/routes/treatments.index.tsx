@@ -142,9 +142,6 @@ function TreatmentsIndex() {
                     className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 font-display text-sm tracking-[0.3em] text-cream/90 bg-primary/40 backdrop-blur-sm px-3 py-1.5 rounded-sm">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                 </div>
 
                 {/* Body */}
