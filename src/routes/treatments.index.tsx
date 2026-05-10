@@ -122,7 +122,7 @@ function TreatmentsIndex() {
       </section>
 
       {/* Categories grid */}
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+      <section id="categories" className="mx-auto max-w-7xl px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {categories.map((c, i) => {
             const img = CATEGORY_IMAGES[c.slug] ?? treatmentImg;
