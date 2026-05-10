@@ -1,7 +1,37 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import treatment from "@/assets/treatment.jpg";
 import { categories } from "@/data/treatments";
+import catFillers from "@/assets/cat-dermal-fillers.jpg";
+import catWrinkle from "@/assets/cat-anti-wrinkle.jpg";
+import catIv from "@/assets/cat-iv-drip.jpg";
+import catPrp from "@/assets/cat-prp.jpg";
+import catCupping from "@/assets/cat-cupping.jpg";
+import catSpmu from "@/assets/cat-spmu.jpg";
+import catSkincare from "@/assets/cat-skincare.jpg";
+import catFat from "@/assets/cat-fat-dissolve.jpg";
+import catLaser from "@/assets/cat-laser.jpg";
+import catThreading from "@/assets/cat-threading.jpg";
+import catLashes from "@/assets/cat-lashes.jpg";
+import catHair from "@/assets/cat-hair-makeup.jpg";
+import catPiercings from "@/assets/cat-piercings.jpg";
+
+const CATEGORY_IMAGES: Record<string, string> = {
+  "dermal-fillers": catFillers,
+  "anti-wrinkle": catWrinkle,
+  "im-iv-drip-therapy": catIv,
+  "prp-therapy": catPrp,
+  "wet-cupping-therapy": catCupping,
+  "smpu": catSpmu,
+  "skin-care": catSkincare,
+  "fat-dissolve": catFat,
+  "laser-hair-removal": catLaser,
+  "threading": catThreading,
+  "lashes": catLashes,
+  "hair-makeup": catHair,
+  "piercings": catPiercings,
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,27 +89,74 @@ function Home() {
       </section>
 
       {/* TREATMENT GRID */}
-      <section className="py-24 bg-secondary/30">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-16">
-            <p className="text-xs tracking-[0.4em] uppercase text-accent mb-4">The Menu</p>
-            <h2 className="font-display text-4xl md:text-5xl text-primary">Our Treatments</h2>
+      <section className="relative py-24 md:py-32 bg-gradient-warm overflow-hidden">
+        <div className="absolute top-0 right-0 font-display text-[20rem] leading-none text-accent/[0.05] pointer-events-none select-none -mr-10 -mt-10 hidden md:block">
+          02
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div className="max-w-2xl">
+              <p className="text-xs tracking-[0.4em] uppercase text-accent mb-4 flex items-center gap-2">
+                <Sparkles className="h-3.5 w-3.5" /> The Menu
+              </p>
+              <h2 className="font-display text-4xl md:text-6xl text-primary leading-[1.05] tracking-tight">
+                Treatments crafted <em className="text-gradient-gold not-italic">around you</em>.
+              </h2>
+              <div className="h-[2px] w-24 bg-gradient-gold mt-6" />
+            </div>
+            <Link
+              to="/treatments"
+              className="inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase text-primary hover:text-accent transition self-start md:self-end"
+            >
+              View All Treatments <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {categories.map((c) => (
-              <Link
-                key={c.slug}
-                to="/treatments/$slug"
-                params={{ slug: c.slug }}
-                className="group block bg-card border border-border/60 p-8 rounded-sm hover:shadow-luxe hover:border-accent/40 transition-all"
-              >
-                <h3 className="font-display text-2xl text-primary group-hover:text-gradient-gold transition mb-2">{c.title}</h3>
-                <p className="text-sm text-muted-foreground italic mb-6">{c.tagline}</p>
-                <span className="text-xs tracking-[0.25em] uppercase text-accent inline-flex items-center gap-2">
-                  Discover →
-                </span>
-              </Link>
-            ))}
+            {categories.map((c, i) => {
+              const img = CATEGORY_IMAGES[c.slug] ?? treatment;
+              return (
+                <Link
+                  key={c.slug}
+                  to="/treatments/$slug"
+                  params={{ slug: c.slug }}
+                  className="group relative flex flex-col bg-card border border-border/60 rounded-sm overflow-hidden hover:shadow-luxe hover:border-accent/40 transition-all duration-500"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img
+                      src={img}
+                      alt={c.title}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/10 to-transparent" />
+                    <span className="absolute top-4 left-4 font-display text-sm text-cream/90 tracking-[0.25em]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="absolute top-4 right-4 h-9 w-9 rounded-full bg-cream/95 text-primary flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-300">
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="font-display text-2xl text-cream leading-tight">{c.title}</h3>
+                    </div>
+                  </div>
+                  <div className="flex flex-col flex-1 p-6">
+                    <p className="text-xs tracking-[0.18em] uppercase text-accent mb-3">{c.tagline}</p>
+                    <p className="text-sm text-foreground/75 leading-relaxed line-clamp-3 mb-6">
+                      {c.intro}
+                    </p>
+                    <div className="mt-auto flex items-center justify-between pt-4 border-t border-border/60">
+                      <span className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+                        {c.treatments.length} options
+                      </span>
+                      <span className="inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase text-primary group-hover:text-accent transition">
+                        View More <ArrowUpRight className="h-3.5 w-3.5" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
