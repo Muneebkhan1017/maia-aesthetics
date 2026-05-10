@@ -46,27 +46,76 @@ function TreatmentsIndex() {
   return (
     <div>
       {/* Editorial hero */}
-      <section className="relative overflow-hidden border-b border-border/60">
-        <div
-          className="absolute inset-0 opacity-[0.08] bg-cover bg-center"
-          style={{ backgroundImage: `url(${treatmentImg})` }}
-          aria-hidden
-        />
-        <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <div className="grid md:grid-cols-12 gap-10 items-end">
-            <div className="md:col-span-7">
+      <section className="relative overflow-hidden border-b border-border/60 bg-gradient-warm">
+        {/* Decorative background image */}
+        <div className="absolute inset-0" aria-hidden>
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-[0.18]"
+            style={{ backgroundImage: `url(${treatmentImg})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/85 to-cream/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        </div>
+
+        {/* Oversized decorative numeral */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block" aria-hidden>
+          <span className="font-display italic text-[22rem] leading-none text-accent/[0.06] pr-8">
+            {String(categories.length).padStart(2, "0")}
+          </span>
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-24 md:pt-28 md:pb-32">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.3em] uppercase text-muted-foreground mb-12">
+            <Link to="/" className="hover:text-accent transition">Home</Link>
+            <span className="text-accent/50">/</span>
+            <span className="text-accent">Treatments</span>
+          </nav>
+
+          <div className="grid md:grid-cols-12 gap-10 md:gap-14 items-end">
+            <div className="md:col-span-8">
               <div className="flex items-center gap-3 text-accent mb-6">
-                <span className="h-px w-10 bg-accent" />
-                <span className="text-[11px] font-semibold tracking-[0.4em] uppercase">The Menu</span>
+                <span className="h-px w-12 bg-gradient-gold" />
+                <Sparkles className="h-3.5 w-3.5" />
+                <span className="text-[11px] font-semibold tracking-[0.4em] uppercase">The Treatment Menu</span>
               </div>
-              <h1 className="font-display text-5xl md:text-7xl text-primary leading-[1.05]">
-                Treatments crafted<br />with intention.
+              <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] text-primary leading-[1.02] tracking-tight">
+                Treatments crafted
+                <br />
+                <span className="italic text-gradient-gold">with intention.</span>
               </h1>
-            </div>
-            <div className="md:col-span-5">
-              <p className="text-foreground/75 leading-relaxed text-lg">
+              <p className="mt-8 text-base md:text-lg text-foreground/70 leading-relaxed max-w-xl">
                 A curated portfolio of injectable, regenerative, laser and wellness therapies — each delivered with clinical precision and an artist's eye.
               </p>
+
+              <div className="mt-10 flex flex-wrap items-center gap-4">
+                <a
+                  href="#categories"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-gold text-cream text-[11px] font-semibold tracking-[0.3em] uppercase rounded-sm shadow-luxe hover:opacity-90 transition"
+                >
+                  Explore Treatments
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-4 border border-primary/25 text-primary text-[11px] font-semibold tracking-[0.3em] uppercase rounded-sm hover:bg-primary hover:text-cream transition"
+                >
+                  Book Consultation
+                </Link>
+              </div>
+            </div>
+
+            {/* Stat rail */}
+            <div className="md:col-span-4 md:border-l md:border-border/60 md:pl-10 space-y-8">
+              {[
+                { k: String(categories.length).padStart(2, "0"), l: "Treatment Categories" },
+                { k: "10+", l: "Years of Expertise" },
+                { k: "100%", l: "Personalised Plans" },
+              ].map((s) => (
+                <div key={s.l} className="flex items-baseline gap-5">
+                  <span className="font-display text-4xl md:text-5xl text-gradient-gold leading-none">{s.k}</span>
+                  <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-muted-foreground">{s.l}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
