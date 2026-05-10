@@ -1,7 +1,37 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import treatment from "@/assets/treatment.jpg";
 import { categories } from "@/data/treatments";
+import catFillers from "@/assets/cat-dermal-fillers.jpg";
+import catWrinkle from "@/assets/cat-anti-wrinkle.jpg";
+import catIv from "@/assets/cat-iv-drip.jpg";
+import catPrp from "@/assets/cat-prp.jpg";
+import catCupping from "@/assets/cat-cupping.jpg";
+import catSpmu from "@/assets/cat-spmu.jpg";
+import catSkincare from "@/assets/cat-skincare.jpg";
+import catFat from "@/assets/cat-fat-dissolve.jpg";
+import catLaser from "@/assets/cat-laser.jpg";
+import catThreading from "@/assets/cat-threading.jpg";
+import catLashes from "@/assets/cat-lashes.jpg";
+import catHair from "@/assets/cat-hair-makeup.jpg";
+import catPiercings from "@/assets/cat-piercings.jpg";
+
+const CATEGORY_IMAGES: Record<string, string> = {
+  "dermal-fillers": catFillers,
+  "anti-wrinkle": catWrinkle,
+  "im-iv-drip-therapy": catIv,
+  "prp-therapy": catPrp,
+  "wet-cupping-therapy": catCupping,
+  "smpu": catSpmu,
+  "skin-care": catSkincare,
+  "fat-dissolve": catFat,
+  "laser-hair-removal": catLaser,
+  "threading": catThreading,
+  "lashes": catLashes,
+  "hair-makeup": catHair,
+  "piercings": catPiercings,
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
