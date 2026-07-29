@@ -17,7 +17,7 @@ function About() {
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <p className="text-xs tracking-[0.4em] uppercase text-accent mb-4">About Maia</p>
-          <h1 className="font-display text-5xl md:text-7xl text-primary mb-8">Where artistry meets medicine.</h1>
+          <h1 className="h1-editorial text-primary mb-8" style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}>Where artistry meets <em className="not-italic italic text-gradient-gold">medicine</em>.</h1>
           <p className="text-lg text-foreground/75 leading-relaxed max-w-3xl mx-auto">
             Maia Aesthetics &amp; Wellness Clinic was founded on a simple belief — that beauty treatments should feel as considered as the results they deliver.
           </p>

@@ -76,7 +76,7 @@ function TreatmentPage() {
           <div className="grid md:grid-cols-12 gap-10 items-end">
             <div className="md:col-span-8">
               <p className="font-display text-accent tracking-[0.3em] text-sm mb-4">— {numLabel} / {String(categories.length).padStart(2, "0")}</p>
-              <h1 className="font-display text-5xl md:text-7xl text-primary leading-[1.05]">
+              <h1 className="h1-editorial text-primary" style={{ fontSize: "clamp(3rem, 7.5vw, 6.5rem)" }}>
                 {category.title}
               </h1>
               <p className="mt-5 text-lg md:text-xl italic text-accent/90 font-display">{category.tagline}</p>
