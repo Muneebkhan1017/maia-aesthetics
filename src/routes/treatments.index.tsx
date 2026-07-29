@@ -79,10 +79,10 @@ function TreatmentsIndex() {
                 <Sparkles className="h-3.5 w-3.5" />
                 <span className="text-[11px] font-semibold tracking-[0.4em] uppercase">The Treatment Menu</span>
               </div>
-              <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] text-primary leading-[1.02] tracking-tight">
+              <h1 className="h1-editorial text-primary">
                 Treatments crafted
                 <br />
-                <span className="italic text-gradient-gold">with intention.</span>
+                <span className="italic text-gradient-gold" style={{ fontSize: "1.06em" }}>with intention.</span>
               </h1>
               <p className="mt-8 text-base md:text-lg text-foreground/70 leading-relaxed max-w-xl">
                 A curated portfolio of injectable, regenerative, laser and wellness therapies — each delivered with clinical precision and an artist's eye.

@@ -15,7 +15,7 @@ function Contact() {
     <div className="py-24">
       <div className="mx-auto max-w-4xl px-6 text-center">
         <p className="text-xs tracking-[0.4em] uppercase text-accent mb-4">Get In Touch</p>
-        <h1 className="font-display text-5xl md:text-6xl text-primary mb-6">Book Your Visit</h1>
+        <h1 className="h1-editorial text-primary mb-6" style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}>Book Your <em className="not-italic italic text-gradient-gold">Visit</em></h1>
         <p className="text-foreground/70 leading-relaxed max-w-2xl mx-auto mb-16">
           We'd love to welcome you. Reach out via WhatsApp for the fastest response, or DM us on social.
         </p>
